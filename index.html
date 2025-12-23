@@ -27,6 +27,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -52,9 +54,8 @@
                     <a href="index.html" class="text-brand-orange font-semibold">Início</a>
                     <a href="pages/destinos.html" class="text-gray-600 hover:text-brand-orange transition">Destinos</a>
                     <a href="pages/sobre.html" class="text-gray-600 hover:text-brand-orange transition">Sobre Nós</a>
-                    <a href="https://wa.me/5545998031634" target="_blank"
-                        class="bg-brand-orange text-white px-5 py-2 rounded-full font-semibold hover:bg-orange-700 transition shadow-lg">Falar
-                        no WhatsApp</a>
+                    <button onclick="openConsultancyModal()"
+                        class="bg-brand-orange text-white px-5 py-2 rounded-full font-semibold hover:bg-orange-700 transition shadow-lg">WhatsApp</button>
                 </div>
 
                 <div class="flex items-center md:hidden">
@@ -94,10 +95,10 @@
                     5.000 viajantes satisfeitos que descobriram o mundo com o suporte exclusivo da Amanhecer Turismo.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-6 justify-center">
-                    <a href="https://wa.me/5545998031634" target="_blank"
+                    <button onclick="openConsultancyModal()"
                         class="bg-brand-orange text-white px-10 py-4 rounded-full font-bold text-xl hover:bg-orange-700 transition transform hover:scale-110 shadow-2xl flex items-center justify-center gap-2">
                         <i class="fa-brands fa-whatsapp text-2xl"></i> Começar Agora
-                    </a>
+                    </button>
                     <a href="pages/destinos.html"
                         class="bg-white/10 backdrop-blur-md border-2 border-white/30 text-white px-10 py-4 rounded-full font-bold text-xl hover:bg-white hover:text-brand-blue transition transform hover:scale-105">Explorar
                         Destinos</a>
@@ -376,10 +377,10 @@
             <div class="max-w-4xl mx-auto px-4">
                 <h2 class="text-4xl md:text-6xl font-bold mb-8">Sua aventura começa hoje. <br>Onde você quer amanhecer
                     amanhã?</h2>
-                <a href="https://wa.me/5545998031634" target="_blank"
+                <button onclick="openConsultancyModal()"
                     class="inline-block bg-brand-blue text-white px-12 py-5 rounded-full font-bold text-2xl hover:bg-slate-800 transition transform hover:scale-110 shadow-3xl">
                     Agendar Consultoria Grátis
-                </a>
+                </button>
                 <p class="mt-6 text-orange-100 font-medium tracking-wide">*Fale direto com nossos especialistas locais
                 </p>
             </div>
@@ -428,6 +429,8 @@
             </div>
         </div>
     </footer>
+
+
 
     <script src="assets/js/main.js"></script>
 </body>

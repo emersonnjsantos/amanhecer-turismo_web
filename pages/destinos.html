@@ -27,6 +27,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/style.css">
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -52,9 +54,8 @@
                     <a href="../index.html" class="text-gray-600 hover:text-brand-orange transition">Início</a>
                     <a href="destinos.html" class="text-brand-orange font-semibold">Destinos</a>
                     <a href="sobre.html" class="text-gray-600 hover:text-brand-orange transition">Sobre Nós</a>
-                    <a href="https://wa.me/5545998031634" target="_blank"
-                        class="bg-brand-orange text-white px-5 py-2 rounded-full font-semibold hover:bg-orange-700 transition shadow-lg">Falar
-                        no WhatsApp</a>
+                    <button onclick="openConsultancyModal()"
+                        class="bg-brand-orange text-white px-5 py-2 rounded-full font-semibold hover:bg-orange-700 transition shadow-lg">WhatsApp</button>
                 </div>
 
                 <div class="flex items-center md:hidden">

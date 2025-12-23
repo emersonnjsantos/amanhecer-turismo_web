@@ -435,5 +435,10 @@ function showSuccess() {
         termsCheck.checked = false;
         btnConfirm.disabled = true;
         btnConfirm.innerText = 'Confirmar Agendamento';
+
+        // Fecha o modal automaticamente após 3 segundos
+        setTimeout(() => {
+            closeConsultancyModal();
+        }, 3000);
     }
 }

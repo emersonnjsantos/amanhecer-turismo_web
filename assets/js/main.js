@@ -116,12 +116,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Injeção Dinâmica do Modal de Consultoria
     const injectModal = () => {
+        if (document.getElementById('consultancy-modal')) return;
+
         const modalHTML = `
         <div id="consultancy-modal" class="fixed inset-0 z-[100] hidden">
             <div class="absolute inset-0 bg-brand-blue/80 backdrop-blur-sm" onclick="closeConsultancyModal()"></div>
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl px-4">
-                <div class="bg-white rounded-[2rem] shadow-2xl p-8 md:p-12 relative overflow-hidden">
-                    <button onclick="closeConsultancyModal()" class="absolute top-6 right-6 text-gray-400 hover:text-brand-orange transition">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl px-4 max-h-[90vh] overflow-y-auto pt-8 pb-8">
+                <div class="bg-white rounded-[2rem] shadow-2xl p-8 md:p-12 relative">
+                    <button onclick="closeConsultancyModal()" class="absolute top-6 right-6 text-gray-400 hover:text-brand-orange transition z-10">
                         <i class="fa-solid fa-xmark text-2xl"></i>
                     </button>
 
@@ -132,31 +134,107 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
 
                         <form id="consultancy-form" class="space-y-6">
+                            <!-- Dados Pessoais -->
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div>
+                                <div class="relative group">
                                     <label class="block text-sm font-bold text-gray-700 mb-2">Nome</label>
-                                    <input type="text" name="nome" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none transition">
+                                    <input type="text" name="nome" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none transition pr-10">
+                                    <button type="button" onclick="clearInput(this)" class="absolute right-3 top-10 text-gray-400 hover:text-brand-orange opacity-0 group-focus-within:opacity-100 transition">
+                                        <i class="fa-solid fa-circle-xmark"></i>
+                                    </button>
                                 </div>
-                                <div>
+                                <div class="relative group">
                                     <label class="block text-sm font-bold text-gray-700 mb-2">Sobrenome</label>
-                                    <input type="text" name="sobrenome" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none transition">
+                                    <input type="text" name="sobrenome" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none transition pr-10">
+                                    <button type="button" onclick="clearInput(this)" class="absolute right-3 top-10 text-gray-400 hover:text-brand-orange opacity-0 group-focus-within:opacity-100 transition">
+                                        <i class="fa-solid fa-circle-xmark"></i>
+                                    </button>
                                 </div>
                             </div>
 
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div>
+                                <div class="relative group">
                                     <label class="block text-sm font-bold text-gray-700 mb-2">WhatsApp</label>
-                                    <input type="tel" name="whatsapp" required placeholder="(XX) XXXXX-XXXX" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none transition">
+                                    <input type="tel" name="whatsapp" required placeholder="(XX) XXXXX-XXXX" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none transition pr-10">
+                                    <button type="button" onclick="clearInput(this)" class="absolute right-3 top-10 text-gray-400 hover:text-brand-orange opacity-0 group-focus-within:opacity-100 transition">
+                                        <i class="fa-solid fa-circle-xmark"></i>
+                                    </button>
                                 </div>
-                                <div>
+                                <div class="relative group">
                                     <label class="block text-sm font-bold text-gray-700 mb-2">E-mail</label>
-                                    <input type="email" name="email" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none transition">
+                                    <input type="email" name="email" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none transition pr-10">
+                                    <button type="button" onclick="clearInput(this)" class="absolute right-3 top-10 text-gray-400 hover:text-brand-orange opacity-0 group-focus-within:opacity-100 transition">
+                                        <i class="fa-solid fa-circle-xmark"></i>
+                                    </button>
                                 </div>
                             </div>
 
-                            <div>
-                                <label class="block text-sm font-bold text-gray-700 mb-2">Endereço</label>
-                                <input type="text" name="endereco" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none transition">
+                            <!-- Endereço Detalhado -->
+                            <div class="pt-4 border-t border-gray-100">
+                                <h3 class="text-sm font-bold text-brand-orange uppercase tracking-wider mb-4">Endereço de Correspondência</h3>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                    <div class="md:col-span-1 relative group">
+                                        <label class="block text-sm font-bold text-gray-700 mb-2">CEP</label>
+                                        <input type="text" name="cep" required placeholder="00000-000" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none transition pr-10">
+                                        <button type="button" onclick="clearInput(this)" class="absolute right-3 top-10 text-gray-400 hover:text-brand-orange opacity-0 group-focus-within:opacity-100 transition">
+                                            <i class="fa-solid fa-circle-xmark"></i>
+                                        </button>
+                                    </div>
+                                    <div class="md:col-span-2 relative group">
+                                        <label class="block text-sm font-bold text-gray-700 mb-2">Logradouro (Rua, Av.)</label>
+                                        <input type="text" name="logradouro" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none transition pr-10">
+                                        <button type="button" onclick="clearInput(this)" class="absolute right-3 top-10 text-gray-400 hover:text-brand-orange opacity-0 group-focus-within:opacity-100 transition">
+                                            <i class="fa-solid fa-circle-xmark"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mt-6">
+                                    <div class="relative group">
+                                        <label class="block text-sm font-bold text-gray-700 mb-2">Número</label>
+                                        <input type="text" name="numero" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none transition pr-10">
+                                        <button type="button" onclick="clearInput(this)" class="absolute right-3 top-10 text-gray-400 hover:text-brand-orange opacity-0 group-focus-within:opacity-100 transition">
+                                            <i class="fa-solid fa-circle-xmark"></i>
+                                        </button>
+                                    </div>
+                                    <div class="md:col-span-3 relative group">
+                                        <label class="block text-sm font-bold text-gray-700 mb-2">Complemento</label>
+                                        <input type="text" name="complemento" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none transition pr-10">
+                                        <button type="button" onclick="clearInput(this)" class="absolute right-3 top-10 text-gray-400 hover:text-brand-orange opacity-0 group-focus-within:opacity-100 transition">
+                                            <i class="fa-solid fa-circle-xmark"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+                                    <div class="relative group">
+                                        <label class="block text-sm font-bold text-gray-700 mb-2">Bairro</label>
+                                        <input type="text" name="bairro" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none transition pr-10">
+                                        <button type="button" onclick="clearInput(this)" class="absolute right-3 top-10 text-gray-400 hover:text-brand-orange opacity-0 group-focus-within:opacity-100 transition">
+                                            <i class="fa-solid fa-circle-xmark"></i>
+                                        </button>
+                                    </div>
+                                    <div class="relative group">
+                                        <label class="block text-sm font-bold text-gray-700 mb-2">Cidade</label>
+                                        <input type="text" name="cidade" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none transition pr-10">
+                                        <button type="button" onclick="clearInput(this)" class="absolute right-3 top-10 text-gray-400 hover:text-brand-orange opacity-0 group-focus-within:opacity-100 transition">
+                                            <i class="fa-solid fa-circle-xmark"></i>
+                                        </button>
+                                    </div>
+                                    <div class="relative group">
+                                        <label class="block text-sm font-bold text-gray-700 mb-2">Estado</label>
+                                        <select name="estado" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none transition bg-white">
+                                            <option value="">UF</option>
+                                            <option value="AC">AC</option><option value="AL">AL</option><option value="AP">AP</option><option value="AM">AM</option>
+                                            <option value="BA">BA</option><option value="CE">CE</option><option value="DF">DF</option><option value="ES">ES</option>
+                                            <option value="GO">GO</option><option value="MA">MA</option><option value="MT">MT</option><option value="MS">MS</option>
+                                            <option value="MG">MG</option><option value="PA">PA</option><option value="PB">PB</option><option value="PR">PR</option>
+                                            <option value="PE">PE</option><option value="PI">PI</option><option value="RJ">RJ</option><option value="RN">RN</option>
+                                            <option value="RS">RS</option><option value="RO">RO</option><option value="RR">RR</option><option value="SC">SC</option>
+                                            <option value="SP">SP</option><option value="SE">SE</option><option value="TO">TO</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
 
                             <button type="button" onclick="goToStep2()" class="w-full bg-brand-orange text-white py-4 rounded-xl font-bold text-lg hover:bg-orange-700 transition shadow-lg">
@@ -169,9 +247,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         <h2 class="text-2xl font-bold text-brand-blue mb-6">Proteção de Dados (LGPD)</h2>
                         <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6 mb-8 max-h-48 overflow-y-auto text-sm text-gray-600 leading-relaxed">
                             <h4 class="font-bold mb-2">Política de Privacidade Amanhecer Turismo</h4>
-                            <p class="mb-4">Para fornecer uma consultoria personalizada, precisamos coletar seus dados básicos. Estes dados serão utilizados exclusivamente por nossos especialistas para entrar em contato via WhatsApp ou E-mail.</p>
-                            <p class="mb-4">**Quais dados coletamos?** Nome, E-mail, Telefone e Endereço.</p>
-                            <p class="mb-4">**Finalidade:** Agendamento de consultoria e envio de orçamentos personalizados.</p>
+                            <p class="mb-4">Para fornecer uma consultoria personalizada, precisamos coletar seus dados básicos e de endereço para fins de faturamento e logística. Estes dados serão utilizados exclusivamente por nossos especialistas para entrar em contato via WhatsApp ou E-mail.</p>
+                            <p class="mb-4">**Quais dados coletamos?** Nome, E-mail, Telefone e Endereço Completo.</p>
+                            <p class="mb-4">**Finalidade:** Agendamento de consultoria, envio de orçamentos e formalização de propostas.</p>
                             <p>Ao concordar, você autoriza a Amanhecer Turismo a processar suas informações conforme descrito.</p>
                         </div>
 
@@ -214,10 +292,20 @@ document.addEventListener('DOMContentLoaded', () => {
             termsCheck.addEventListener('change', () => {
                 btnConfirm.disabled = !termsCheck.checked;
             });
+            btnConfirm.disabled = true;
         }
     };
 
     injectModal();
+
+    // Função global para limpar inputs
+    window.clearInput = (btn) => {
+        const input = btn.parentElement.querySelector('input');
+        if (input) {
+            input.value = '';
+            input.focus();
+        }
+    };
 });
 
 // Configuração do Supabase (Substitua pelos seus dados reais)
@@ -232,11 +320,27 @@ if (typeof supabase !== 'undefined' && SUPABASE_URL !== 'https://SUA_URL_AQUI.su
 
 // Lógica do Modal de Consultoria
 window.openConsultancyModal = () => {
-    const modal = document.getElementById('consultancy-modal');
+    let modal = document.getElementById('consultancy-modal');
+
+    // Se o modal não existir (erro de carregamento inicial), tenta injetar novamente
+    if (!modal) {
+        console.warn('Modal não encontrado. Tentando reinjetar...');
+        // O script main.js já chamou injectModal no DOMContentLoaded, 
+        // mas se falhou, tentamos acessar a função se ela estiver no escopo global ou recarregar
+        if (typeof injectModal === 'function') {
+            injectModal();
+        } else {
+            // Último caso: o script pode não ter terminado de carregar
+            alert('O sistema ainda está carregando. Por favor, aguarde um segundo e tente novamente.');
+            return;
+        }
+    }
+
+    modal = document.getElementById('consultancy-modal');
     if (modal) {
         modal.classList.remove('hidden');
         document.body.style.overflow = 'hidden';
-        goToStep1();
+        if (window.goToStep1) window.goToStep1();
     }
 };
 
@@ -282,12 +386,16 @@ window.submitBooking = async () => {
     btnConfirm.innerText = 'Processando...';
 
     const formData = new FormData(form);
+
+    // Concatena o endereço detalhado para compatibilidade com o campo único 'endereco'
+    const enderecoCompleto = `${formData.get('logradouro')}, ${formData.get('numero')}${formData.get('complemento') ? ' - ' + formData.get('complemento') : ''}, ${formData.get('bairro')}, ${formData.get('cidade')} - ${formData.get('estado')}. CEP: ${formData.get('cep')}`;
+
     const data = {
         nome: formData.get('nome'),
         sobrenome: formData.get('sobrenome'),
         whatsapp: formData.get('whatsapp'),
         email: formData.get('email'),
-        endereco: formData.get('endereco'),
+        endereco: enderecoCompleto,
         aceite_termos: true,
         created_at: new Date().toISOString()
     };

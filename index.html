@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amanhecer Turismo - Descubra seu Próximo Destino</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            orange: '#F97316',
+                            blue: '#0F172A',
+                            light: '#F8FAFC'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-brand-light text-slate-800 flex flex-col min-h-screen">
+
+    <!-- Navegação -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex-shrink-0 flex items-center gap-2">
+                        <i class="fa-solid fa-sun text-brand-orange text-2xl"></i>
+                        <span class="font-bold text-xl tracking-tight text-brand-blue">AMANHECER <span
+                                class="text-brand-orange">TURISMO</span></span>
+                    </a>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-brand-orange font-semibold">Início</a>
+                    <a href="pages/destinos.html" class="text-gray-600 hover:text-brand-orange transition">Destinos</a>
+                    <a href="pages/sobre.html" class="text-gray-600 hover:text-brand-orange transition">Sobre Nós</a>
+                    <a href="https://wa.me/5545998031634" target="_blank"
+                        class="bg-brand-orange text-white px-5 py-2 rounded-full font-semibold hover:bg-orange-700 transition shadow-lg">Falar
+                        no WhatsApp</a>
+                </div>
+
+                <div class="flex items-center md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-brand-orange focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <a href="index.html" class="block py-2 px-4 text-sm hover:bg-gray-100">Início</a>
+            <a href="pages/destinos.html" class="block py-2 px-4 text-sm hover:bg-gray-100">Destinos</a>
+            <a href="pages/sobre.html" class="block py-2 px-4 text-sm hover:bg-gray-100">Sobre Nós</a>
+            <a href="https://wa.me/5545998031634" target="_blank"
+                class="block py-2 px-4 text-sm text-brand-orange font-bold">Contato</a>
+        </div>
+    </nav>
+
+    <main class="flex-grow pt-16">
+        <!-- Hero Section -->
+        <section class="relative bg-brand-blue h-[90vh] flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 opacity-50">
+                <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=2070"
+                    alt="Viagem dos Sonhos" class="w-full h-full object-cover scale-105 animate-[pulse_10s_infinite]">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-blue via-transparent to-transparent"></div>
+            <div class="relative z-10 text-center px-4 max-w-5xl">
+                <span
+                    class="inline-block bg-brand-orange text-white px-4 py-1 rounded-full text-sm font-bold mb-6 tracking-widest uppercase animate-bounce">A
+                    Melhor Agência de 2024</span>
+                <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">Não apenas uma viagem,
+                    <br><span class="text-brand-orange">uma nova vida.</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-200 mb-10 leading-relaxed max-w-3xl mx-auto">Junte-se a mais de
+                    5.000 viajantes satisfeitos que descobriram o mundo com o suporte exclusivo da Amanhecer Turismo.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <a href="https://wa.me/5545998031634" target="_blank"
+                        class="bg-brand-orange text-white px-10 py-4 rounded-full font-bold text-xl hover:bg-orange-700 transition transform hover:scale-110 shadow-2xl flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i> Começar Agora
+                    </a>
+                    <a href="pages/destinos.html"
+                        class="bg-white/10 backdrop-blur-md border-2 border-white/30 text-white px-10 py-4 rounded-full font-bold text-xl hover:bg-white hover:text-brand-blue transition transform hover:scale-105">Explorar
+                        Destinos</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Parceiros e Logos (Carrossel Infinito Expandido) -->
+        <section class="py-12 bg-white border-b overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <p class="text-center text-gray-400 font-semibold mb-8 uppercase tracking-widest text-sm">Parceiros
+                    Globais e Agências Colaboradoras</p>
+
+                <div class="logos-container">
+                    <div
+                        class="animate-scroll flex items-center gap-16 grayscale opacity-60 hover:grayscale-0 transition duration-500 py-4">
+                        <!-- Logos Grupo 1 -->
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-plane-up text-3xl text-gray-600"></i>
+                            <span class="text-xl font-bold text-gray-600">SkyLink Global</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-hotel text-3xl text-gray-600"></i>
+                            <span class="text-xl font-bold text-gray-600">Elite Resorts</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-shield-dog text-3xl text-gray-600"></i>
+                            <span class="text-xl font-bold text-gray-600">SafeTravel Inc.</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-bridge-water text-3xl text-gray-600"></i>
+                            <span class="text-xl font-bold text-gray-600">Iguaçu Alliance</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-earth-americas text-3xl text-gray-600"></i>
+                            <span class="text-xl font-bold text-gray-600">Terra Nova</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-umbrella-beach text-3xl text-gray-600"></i>
+                            <span class="text-xl font-bold text-gray-600">SunQuest</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-compass text-3xl text-gray-600"></i>
+                            <span class="text-xl font-bold text-gray-600">TrueNorth</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-mountain-sun text-3xl text-gray-600"></i>
+                            <span class="text-xl font-bold text-gray-600">Alpine Peaks</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-anchor text-3xl text-gray-600"></i>
+                            <span class="text-xl font-bold text-gray-600">Oceanic Blue</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-camera-retro text-3xl text-gray-600"></i>
+                            <span class="text-xl font-bold text-gray-600">PhotoTrip</span>
+                        </div>
+
+                        <!-- Logos Grupo 2 (Duplicado para o loop infinito) -->
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-plane-up text-3xl text-gray-600"></i>
+                            <span class="text-xl font-bold text-gray-600">SkyLink Global</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-hotel text-3xl text-gray-600"></i>
+                            <span class="text-xl font-bold text-gray-600">Elite Resorts</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-shield-dog text-3xl text-gray-600"></i>
+                            <span class="text-xl font-bold text-gray-600">SafeTravel Inc.</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-bridge-water text-3xl text-gray-600"></i>
+                            <span class="text-xl font-bold text-gray-600">Iguaçu Alliance</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-earth-americas text-3xl text-gray-600"></i>
+                            <span class="text-xl font-bold text-gray-600">Terra Nova</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-umbrella-beach text-3xl text-gray-600"></i>
+                            <span class="text-xl font-bold text-gray-600">SunQuest</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-compass text-3xl text-gray-600"></i>
+                            <span class="text-xl font-bold text-gray-600">TrueNorth</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-mountain-sun text-3xl text-gray-600"></i>
+                            <span class="text-xl font-bold text-gray-600">Alpine Peaks</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-anchor text-3xl text-gray-600"></i>
+                            <span class="text-xl font-bold text-gray-600">Oceanic Blue</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-camera-retro text-3xl text-gray-600"></i>
+                            <span class="text-xl font-bold text-gray-600">PhotoTrip</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diferenciais -->
+        <section class="py-24 bg-brand-light">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-brand-blue sm:text-5xl">Excelência em Cada Detalhe</h2>
+                    <p class="mt-4 text-xl text-gray-600">Nossa autoridade é construída com transparência e paixão.</p>
+                    <div class="w-20 h-1 bg-brand-orange mx-auto mt-6 rounded"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <div
+                        class="bg-white p-10 rounded-3xl shadow-xl hover:shadow-2xl transition group transform hover:-translate-y-2">
+                        <div
+                            class="w-20 h-20 bg-orange-100 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-brand-orange group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-shield-halved text-3xl text-brand-orange group-hover:text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-brand-blue">Garantia de Satisfação</h3>
+                        <p class="text-gray-600 leading-relaxed">Somos a única agência que oferece reembolso total em
+                            caso de insatisfação assistida com nossos guias locais.</p>
+                    </div>
+                    <div
+                        class="bg-white p-10 rounded-3xl shadow-xl hover:shadow-2xl transition group transform hover:-translate-y-2">
+                        <div
+                            class="w-20 h-20 bg-blue-100 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-brand-blue group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-award text-3xl text-brand-blue group-hover:text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-brand-blue">Premiação Travel+</h3>
+                        <p class="text-gray-600 leading-relaxed">Eleitos pela terceira vez consecutiva como o Melhor
+                            Atendimento da Região Sul pela revista Travel Plus Internacional.</p>
+                    </div>
+                    <div
+                        class="bg-white p-10 rounded-3xl shadow-xl hover:shadow-2xl transition group transform hover:-translate-y-2">
+                        <div
+                            class="w-20 h-20 bg-orange-100 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-brand-orange group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-headset text-3xl text-brand-orange group-hover:text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-brand-blue">Concierge 24/7</h3>
+                        <p class="text-gray-600 leading-relaxed">Um assistente pessoal dedicado a você desde o embarque
+                            até o retorno, via WhatsApp exclusivo em tempo real.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Estatísticas (Gatilhos de Autoridade) -->
+        <section id="stats-section" class="py-20 bg-brand-blue text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div>
+                        <span class="text-5xl font-bold text-brand-orange block mb-2 counter"
+                            data-target="5000">+0</span>
+                        <span class="text-gray-400 uppercase tracking-widest text-sm font-semibold">Clientes
+                            Felizes</span>
+                    </div>
+                    <div>
+                        <span class="text-5xl font-bold text-brand-orange block mb-2 counter"
+                            data-target="120">0+</span>
+                        <span class="text-gray-400 uppercase tracking-widest text-sm font-semibold">Destinos
+                            Globais</span>
+                    </div>
+                    <div>
+                        <span class="text-5xl font-bold text-brand-orange block mb-2 counter" data-target="99">0%</span>
+                        <span class="text-gray-400 uppercase tracking-widest text-sm font-semibold">Taxa de
+                            Sucesso</span>
+                    </div>
+                    <div>
+                        <span class="text-5xl font-bold text-brand-orange block mb-2 counter" data-target="10">0
+                            Anos</span>
+                        <span class="text-gray-400 uppercase tracking-widest text-sm font-semibold">De História</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Prova Social (Testemunhos) -->
+        <section class="py-24 bg-white overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-brand-blue">Vozes de Quem Já Viveu</h2>
+                    <p class="mt-4 text-xl text-gray-600">Relatos reais de experiências que transformaram vidas.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <!-- Depoimento 1 -->
+                    <div class="bg-brand-light p-8 rounded-3xl relative">
+                        <div class="flex items-center gap-1 text-brand-orange mb-6">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-700 italic mb-8 leading-relaxed">"A minha viagem para Foz foi surreal. O
+                            suporte no WhatsApp da Amanhecer parece mágica, respondem em segundos e resolveram um
+                            imprevisto com o hotel sem eu nem pedir!"</p>
+                        <div class="flex items-center gap-4">
+                            <img src="assets/img/woman.png" alt="Ana Paula"
+                                class="w-20 h-20 rounded-full border-2 border-brand-orange object-cover">
+                            <div>
+                                <h4 class="font-bold text-brand-blue text-lg">Ana Paula Santos</h4>
+                                <p class="text-xs text-brand-orange font-semibold">Empresária - Curitiba/PR</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Depoimento 2 -->
+                    <div class="bg-brand-light p-8 rounded-3xl relative">
+                        <div class="flex items-center gap-1 text-brand-orange mb-6">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-700 italic mb-8 leading-relaxed">"Sempre tive medo de viajar sozinha para o
+                            exterior. Com a Amanhecer, me senti segura do começo ao fim. O pacote para a Islândia foi
+                            impecável, recomendo para todos meus amigos."</p>
+                        <div class="flex items-center gap-4">
+                            <img src="https://i.pravatar.cc/100?u=carla" alt="Carla Mendes"
+                                class="w-14 h-14 rounded-full border-2 border-brand-orange">
+                            <div>
+                                <h4 class="font-bold text-brand-blue">Carla Mendes</h4>
+                                <p class="text-xs text-brand-orange font-semibold">CEO da Mendes Tech - SP</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Depoimento 3 -->
+                    <div class="bg-brand-light p-8 rounded-3xl relative md:col-span-2 lg:col-span-1">
+                        <div class="flex items-center gap-1 text-brand-orange mb-6">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-700 italic mb-8 leading-relaxed">"Passeio nas Cataratas com o Macuco Safari
+                            foi a melhor experiência da minha vida. Tudo organizado milimetricamente. A equipe é nota
+                            mil!"</p>
+                        <div class="flex items-center gap-4">
+                            <img src="https://i.pravatar.cc/100?u=marcos" alt="Marcos Oliveira"
+                                class="w-14 h-14 rounded-full border-2 border-brand-orange">
+                            <div>
+                                <h4 class="font-bold text-brand-blue">Marcos Oliveira</h4>
+                                <p class="text-xs text-brand-orange font-semibold">Arquiteto - RJ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mensagem do CEO (Trust) -->
+        <section class="py-20 bg-brand-light">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div
+                    class="bg-white rounded-[3rem] p-12 md:p-20 shadow-2xl flex flex-col md:flex-row items-center gap-12">
+                    <div class="w-full md:w-1/3">
+                        <img src="assets/img/img.jpeg" alt="CEO"
+                            class="rounded-[2rem] shadow-xl border-4 border-brand-orange">
+                    </div>
+                    <div class="w-full md:w-2/3">
+                        <i class="fa-solid fa-quote-left text-5xl text-orange-200 mb-6 block"></i>
+                        <h2 class="text-3xl md:text-4xl font-bold text-brand-blue mb-6">"Meu compromisso é que sua única
+                            preocupação seja aproveitar o caminho."</h2>
+                        <p class="text-xl text-gray-600 mb-8 leading-relaxed italic">"Fundamos a Amanhecer Turismo em
+                            Foz do Iguaçu com um propósito simples: transformar o turismo em conexão humana e memórias
+                            eternas. Não vendemos bilhetes, vendemos capítulos inesquecíveis da sua história."</p>
+                        <div>
+                            <p class="font-bold text-2xl text-brand-blue">Emerson J. Santos</p>
+                            <p class="text-brand-orange font-semibold">Fundador & CEO Amanhecer Turismo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Final -->
+        <section class="py-24 bg-brand-orange text-white text-center">
+            <div class="max-w-4xl mx-auto px-4">
+                <h2 class="text-4xl md:text-6xl font-bold mb-8">Sua aventura começa hoje. <br>Onde você quer amanhecer
+                    amanhã?</h2>
+                <a href="https://wa.me/5545998031634" target="_blank"
+                    class="inline-block bg-brand-blue text-white px-12 py-5 rounded-full font-bold text-2xl hover:bg-slate-800 transition transform hover:scale-110 shadow-3xl">
+                    Agendar Consultoria Grátis
+                </a>
+                <p class="mt-6 text-orange-100 font-medium tracking-wide">*Fale direto com nossos especialistas locais
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-blue text-white py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 border-b border-gray-700 pb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <a href="index.html" class="flex items-center gap-2 mb-6">
+                        <i class="fa-solid fa-sun text-brand-orange text-3xl"></i>
+                        <span class="font-bold text-2xl tracking-tight">AMANHECER <span
+                                class="text-brand-orange">TURISMO</span></span>
+                    </a>
+                    <p class="text-gray-400 max-w-sm">Levando você para ver o mundo de uma forma diferente. Criamos
+                        memórias inesquecíveis desde 2024.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6 text-brand-orange">Menu</h4>
+                    <ul class="space-y-4 text-gray-400">
+                        <li><a href="index.html" class="hover:text-white transition">Início</a></li>
+                        <li><a href="pages/destinos.html" class="hover:text-white transition">Destinos</a></li>
+                        <li><a href="pages/sobre.html" class="hover:text-white transition">Sobre Nós</a></li>
+                        <li><a href="pages/contato.html" class="hover:text-white transition">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6 text-brand-orange">Redes Sociais</h4>
+                    <div class="flex gap-4">
+                        <a href="https://www.instagram.com" target="_blank"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-brand-orange transition"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.facebook.com" target="_blank"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-brand-orange transition"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://wa.me/5545998031634" target="_blank"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-brand-orange transition"><i
+                                class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center text-sm text-gray-500">
+                <p>&copy; 2024 Amanhecer Turismo. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

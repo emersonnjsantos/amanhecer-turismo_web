@@ -1,0 +1,59 @@
+/* Estilos globais e overrides do Tailwind se necessário */
+@layer base {
+    body {
+        @apply antialiased;
+    }
+}
+
+/* Animações suaves nos cards */
+.group:hover img {
+    transform: scale(1.1);
+}
+
+/* Ajustes finos para o scroll suave */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Scroll Infinito para Parceiros */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-scroll {
+    display: flex;
+    width: max-content;
+    animation: scroll 40s linear infinite;
+}
+
+.logos-container {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+
+.logos-container::before,
+.logos-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+}
+
+.logos-container::before {
+    left: 0;
+    background: linear-gradient(to right, white, transparent);
+}
+
+.logos-container::after {
+    right: 0;
+    background: linear-gradient(to left, white, transparent);
+}

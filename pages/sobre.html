@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós - Amanhecer Turismo</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            orange: '#F97316',
+                            blue: '#0F172A',
+                            light: '#F8FAFC'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+        }
+
+        .vision-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-brand-light text-slate-800 flex flex-col min-h-screen">
+
+    <!-- Navegação -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../index.html" class="flex-shrink-0 flex items-center gap-2">
+                        <i class="fa-solid fa-sun text-brand-orange text-2xl"></i>
+                        <span class="font-bold text-xl tracking-tight text-brand-blue">AMANHECER <span
+                                class="text-brand-orange">TURISMO</span></span>
+                    </a>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../index.html" class="text-gray-600 hover:text-brand-orange transition">Início</a>
+                    <a href="destinos.html" class="text-gray-600 hover:text-brand-orange transition">Destinos</a>
+                    <a href="sobre.html" class="text-brand-orange font-semibold border-b-2 border-brand-orange">Sobre
+                        Nós</a>
+                    <a href="https://wa.me/5545998031634" target="_blank"
+                        class="bg-brand-orange text-white px-5 py-2 rounded-full font-semibold hover:bg-orange-700 transition shadow-lg">WhatsApp</a>
+                </div>
+
+                <div class="flex items-center md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-brand-orange focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <a href="../index.html" class="block py-3 px-4 text-sm hover:bg-gray-100 border-b">Início</a>
+            <a href="destinos.html" class="block py-3 px-4 text-sm hover:bg-gray-100 border-b">Destinos</a>
+            <a href="sobre.html" class="block py-3 px-4 text-sm bg-gray-50 text-brand-orange font-bold border-b">Sobre
+                Nós</a>
+            <a href="contato.html" class="block py-3 px-4 text-sm hover:bg-gray-100">Contato</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-32 pb-20 gradient-bg text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <span
+                class="inline-block bg-brand-orange/20 text-brand-orange px-4 py-1 rounded-full text-sm font-bold mb-4">Nossa
+                Essência</span>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Realizando Sonhos, <br><span
+                    class="text-brand-orange">Desbravando o Mundo</span></h1>
+            <p class="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto">
+                Mais do que uma agência de viagens, somos curadores de experiências inesquecíveis. Fundada em Foz do
+                Iguaçu, levamos você para ver o pôr do sol em qualquer horizonte.
+            </p>
+        </div>
+        <!-- Efeito decorativo -->
+        <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-brand-orange/10 rounded-full blur-3xl"></div>
+        <div class="absolute -top-24 -left-24 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Quem Somos -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                    <div class="relative">
+                        <img src="../assets/img/woman.png" alt="Amanhecer Turismo Equipe"
+                            class="rounded-3xl shadow-2xl relative z-10">
+                        <div
+                            class="absolute -bottom-6 -right-6 w-full h-full border-4 border-brand-orange rounded-3xl -z-0">
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-bold text-brand-blue mb-6">Nossa História</h2>
+                        <div class="space-y-4 text-gray-600 leading-relaxed">
+                            <p>
+                                A **Amanhecer Turismo** nasceu do desejo de transformar o planejamento de viagens em
+                                algo tão prazeroso quanto o próprio destino. Situados no coração das Três Fronteiras, em
+                                Foz do Iguaçu, compreendemos a magia da descoberta.
+                            </p>
+                            <p>
+                                Acreditamos que cada viajante é único. Por isso, abandonamos os pacotes engessados em
+                                favor de roteiros personalizados que respeitam o seu tempo, o seu orçamento e, acima de
+                                tudo, os seus sonhos.
+                            </p>
+                            <div class="pt-6 flex gap-8">
+                                <div>
+                                    <span class="block text-3xl font-bold text-brand-orange">2k+</span>
+                                    <span class="text-sm text-gray-500">Viajantes Felizes</span>
+                                </div>
+                                <div>
+                                    <span class="block text-3xl font-bold text-brand-orange">50+</span>
+                                    <span class="text-sm text-gray-500">Destinos Globais</span>
+                                </div>
+                                <div>
+                                    <span class="block text-3xl font-bold text-brand-orange">24/7</span>
+                                    <span class="text-sm text-gray-500">Suporte Especializado</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tríade: Missão, Visão e Valores -->
+        <section class="py-20 bg-brand-light">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-brand-blue">Propósitos que nos Movem</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto mt-4">Nossa bússola aponta sempre para a excelência e
+                        satisfação do cliente.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Missão -->
+                    <div
+                        class="bg-white p-10 rounded-3xl shadow-lg vision-card transition duration-300 text-center border-t-4 border-brand-orange">
+                        <div
+                            class="bg-brand-orange/10 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <i class="fa-solid fa-rocket text-brand-orange text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-brand-blue mb-4">Missão</h3>
+                        <p class="text-gray-600">
+                            Proporcionar experiências de viagem seguras, autênticas e inesquecíveis, conectando pessoas
+                            a novas culturas com excelência no atendimento.
+                        </p>
+                    </div>
+
+                    <!-- Visão -->
+                    <div
+                        class="bg-white p-10 rounded-3xl shadow-lg vision-card transition duration-300 text-center border-t-4 border-brand-blue">
+                        <div
+                            class="bg-brand-blue/10 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <i class="fa-solid fa-eye text-brand-blue text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-brand-blue mb-4">Visão</h3>
+                        <p class="text-gray-600">
+                            Ser a agência de viagens referência em roteiros personalizados no país, reconhecida pela
+                            inovação, curadoria rigorosa e fidelização de clientes.
+                        </p>
+                    </div>
+
+                    <!-- Valores -->
+                    <div
+                        class="bg-white p-10 rounded-3xl shadow-lg vision-card transition duration-300 text-center border-t-4 border-brand-orange">
+                        <div
+                            class="bg-brand-orange/10 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <i class="fa-solid fa-heart text-brand-orange text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-brand-blue mb-4">Valores</h3>
+                        <ul class="text-gray-600 space-y-2">
+                            <li>• Transparência e Integridade</li>
+                            <li>• Paixão por Desbravar</li>
+                            <li>• Sustentabilidade Turística</li>
+                            <li>• Empatia e Cuidado Humano</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfólio de Diferenciais -->
+        <section class="py-20 bg-brand-blue text-white overflow-hidden relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-4">Por que escolher a Amanhecer?</h2>
+                        <p class="text-gray-400">O que nos torna diferentes no mercado de turismo.</p>
+                    </div>
+                    <a href="https://wa.me/5545998031634" target="_blank"
+                        class="bg-brand-orange hover:bg-orange-700 text-white px-8 py-3 rounded-full font-bold transition">Consultoria
+                        Gratuita</a>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white/5 p-8 rounded-2xl border border-white/10 hover:bg-white/10 transition">
+                        <i class="fa-solid fa-map-location-dot text-brand-orange text-3xl mb-6"></i>
+                        <h4 class="font-bold text-xl mb-3">Curadoria Premium</h4>
+                        <p class="text-sm text-gray-400">Hotéis e passeios testados e aprovados pela nossa equipe
+                            interna.</p>
+                    </div>
+                    <div class="bg-white/5 p-8 rounded-2xl border border-white/10 hover:bg-white/10 transition">
+                        <i class="fa-solid fa-headset text-brand-orange text-3xl mb-6"></i>
+                        <h4 class="font-bold text-xl mb-3">Concierge 24h</h4>
+                        <p class="text-sm text-gray-400">Assistência completa durante toda a sua viagem, para qualquer
+                            imprevisto.</p>
+                    </div>
+                    <div class="bg-white/5 p-8 rounded-2xl border border-white/10 hover:bg-white/10 transition">
+                        <i class="fa-solid fa-shield-halved text-brand-orange text-3xl mb-6"></i>
+                        <h4 class="font-bold text-xl mb-3">Seguro Total</h4>
+                        <p class="text-sm text-gray-400">Trabalhamos com as melhores seguradoras para sua tranquilidade
+                            absoluta.</p>
+                    </div>
+                    <div class="bg-white/5 p-8 rounded-2xl border border-white/10 hover:bg-white/10 transition">
+                        <i class="fa-solid fa-credit-card text-brand-orange text-3xl mb-6"></i>
+                        <h4 class="font-bold text-xl mb-3">Pagamento Flex</h4>
+                        <p class="text-sm text-gray-400">Condições exclusivas de parcelamento e melhores taxas de
+                            câmbio.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Decoração BG -->
+            <div class="absolute top-0 right-0 opacity-10 translate-x-1/2 -translate-y-1/2">
+                <i class="fa-solid fa-earth-americas text-[500px]"></i>
+            </div>
+        </section>
+
+        <!-- CTA Final -->
+        <section class="py-20 bg-white">
+            <div class="max-w-4xl mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-blue mb-8">Pronto para escrever o seu próximo
+                    capítulo?</h2>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="destinos.html"
+                        class="bg-brand-blue text-white px-10 py-4 rounded-full font-bold hover:bg-slate-800 transition shadow-lg">Ver
+                        Todos os Pacotes</a>
+                    <a href="https://wa.me/5545998031634" target="_blank"
+                        class="border-2 border-brand-orange text-brand-orange px-10 py-4 rounded-full font-bold hover:bg-brand-orange hover:text-white transition">Falar
+                        com Consultor</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-blue text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 border-b border-gray-700 pb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <a href="../index.html" class="flex items-center gap-2 mb-6">
+                        <i class="fa-solid fa-sun text-brand-orange text-3xl"></i>
+                        <span class="font-bold text-2xl tracking-tight">AMANHECER <span
+                                class="text-brand-orange">TURISMO</span></span>
+                    </a>
+                    <p class="text-gray-400 max-w-sm">Levando você para ver o mundo de uma forma diferente. Criamos
+                        memórias inesquecíveis desde 2024.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6 text-brand-orange">Menu</h4>
+                    <ul class="space-y-4 text-gray-400">
+                        <li><a href="../index.html" class="hover:text-white transition">Início</a></li>
+                        <li><a href="destinos.html" class="hover:text-white transition">Destinos</a></li>
+                        <li><a href="sobre.html" class="hover:text-white transition font-bold text-white">Sobre Nós</a>
+                        </li>
+                        <li><a href="contato.html" class="hover:text-white transition">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6 text-brand-orange">Redes Sociais</h4>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-brand-orange transition"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-brand-orange transition"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://wa.me/5545998031634" target="_blank"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-brand-orange transition"><i
+                                class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center text-sm text-gray-500">
+                <p>&copy; 2024 Amanhecer Turismo. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

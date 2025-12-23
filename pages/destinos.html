@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinos - Amanhecer Turismo</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            orange: '#F97316',
+                            blue: '#0F172A',
+                            light: '#F8FAFC'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-brand-light text-slate-800 flex flex-col min-h-screen">
+
+    <!-- Navegação -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../index.html" class="flex-shrink-0 flex items-center gap-2">
+                        <i class="fa-solid fa-sun text-brand-orange text-2xl"></i>
+                        <span class="font-bold text-xl tracking-tight text-brand-blue">AMANHECER <span
+                                class="text-brand-orange">TURISMO</span></span>
+                    </a>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../index.html" class="text-gray-600 hover:text-brand-orange transition">Início</a>
+                    <a href="destinos.html" class="text-brand-orange font-semibold">Destinos</a>
+                    <a href="sobre.html" class="text-gray-600 hover:text-brand-orange transition">Sobre Nós</a>
+                    <a href="https://wa.me/5545998031634" target="_blank"
+                        class="bg-brand-orange text-white px-5 py-2 rounded-full font-semibold hover:bg-orange-700 transition shadow-lg">Falar
+                        no WhatsApp</a>
+                </div>
+
+                <div class="flex items-center md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-brand-orange focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <a href="../index.html" class="block py-2 px-4 text-sm hover:bg-gray-100">Início</a>
+            <a href="destinos.html" class="block py-2 px-4 text-sm hover:bg-gray-100">Destinos</a>
+            <a href="sobre.html" class="block py-2 px-4 text-sm hover:bg-gray-100">Sobre Nós</a>
+            <a href="contato.html" class="block py-2 px-4 text-sm text-brand-orange font-bold">Contato</a>
+        </div>
+    </nav>
+
+    <main class="flex-grow pt-24 pb-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h1 class="text-3xl font-bold text-brand-blue sm:text-5xl mb-4">Escolha sua Próxima Aventura</h1>
+                <p class="text-xl text-gray-600">Pacotes exclusivos para os destinos mais cobiçados do mundo.</p>
+                <div class="w-24 h-1 bg-brand-orange mx-auto mt-6 rounded"></div>
+            </div>
+
+            <!-- Seção Carrossel: Foz do Iguaçu (10 imagens) -->
+            <div class="mb-20">
+                <div class="flex items-center justify-between mb-8">
+                    <div>
+                        <h2 class="text-3xl font-bold text-brand-blue">Especial: Foz do Iguaçu</h2>
+                        <p class="text-gray-600">Explore as maravilhas da Terra das Cataratas</p>
+                    </div>
+                    <!-- Controles automáticos (manual removido) -->
+                </div>
+
+                <div class="relative overflow-hidden group">
+                    <div id="carousel-track" class="flex transition-transform duration-500 ease-in-out gap-8">
+                        <!-- Imagem 1: Cataratas -->
+                        <a href="https://wa.me/5545998031634?text=Olá! Quero saber mais sobre o passeio das Cataratas do Iguaçu."
+                            target="_blank"
+                            class="block w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-21.33px)] flex-shrink-0 bg-white rounded-3xl shadow-xl overflow-hidden group hover:scale-[1.02] transition duration-300">
+                            <div class="relative h-64 overflow-hidden">
+                                <img src="../assets/img/cataratas.jpg" alt="Cataratas"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                                <div
+                                    class="absolute top-4 left-4 bg-brand-orange text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg">
+                                    Destaque</div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-2xl font-bold text-brand-blue mb-2">Cataratas do Iguaçu</h3>
+                                <p class="text-gray-600 text-sm mb-4">Sinta a força da natureza em uma das Sete
+                                    Maravilhas Naturais do Mundo. Passeio inesquecível pelo lado brasileiro.</p>
+                                <div class="flex items-center justify-between mt-6">
+                                    <div>
+                                        <span class="text-gray-400 text-xs block mb-1">A partir de</span>
+                                        <span class="text-2xl font-bold text-brand-blue">R$ 107</span>
+                                    </div>
+                                    <div
+                                        class="bg-brand-blue text-white px-6 py-2 rounded-full font-bold group-hover:bg-slate-800 transition">
+                                        Ver
+                                        Detalhes</div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Imagem 2: Parque das Aves -->
+                        <a href="https://wa.me/5545998031634?text=Olá! Quero saber mais sobre o passeio no Parque das Aves."
+                            target="_blank"
+                            class="block w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-21.33px)] flex-shrink-0 bg-white rounded-3xl shadow-xl overflow-hidden group hover:scale-[1.02] transition duration-300">
+                            <div class="relative h-64 overflow-hidden">
+                                <img src="../assets/img/parque_das_aves.jpg" alt="Parque das Aves"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-2xl font-bold text-brand-blue mb-2">Parque das Aves</h3>
+                                <p class="text-gray-600 text-sm mb-4">Entre em viveiros de imersão e encante-se com
+                                    araras, tucanos e mais de 1.300 aves de todo o mundo.</p>
+                                <div class="flex items-center justify-between mt-6">
+                                    <div>
+                                        <span class="text-gray-400 text-xs block mb-1">A partir de</span>
+                                        <span class="text-2xl font-bold text-brand-blue">R$ 80</span>
+                                    </div>
+                                    <div
+                                        class="bg-brand-blue text-white px-6 py-2 rounded-full font-bold group-hover:bg-slate-800 transition">
+                                        Ver
+                                        Detalhes</div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Imagem 3: Itaipu -->
+                        <a href="https://wa.me/5545998031634?text=Olá! Quero saber mais sobre a visita na Usina de Itaipu."
+                            target="_blank"
+                            class="block w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-21.33px)] flex-shrink-0 bg-white rounded-3xl shadow-xl overflow-hidden group hover:scale-[1.02] transition duration-300">
+                            <div class="relative h-64 overflow-hidden">
+                                <img src="../assets/img/itaipu_binacional.jpg" alt="Itaipu"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-2xl font-bold text-brand-blue mb-2">Usina de Itaipu</h3>
+                                <p class="text-gray-600 text-sm mb-4">Conheça a grandiosidade da maior produtora de
+                                    energia limpa do planeta em um tour técnico ou panorâmico.</p>
+                                <div class="flex items-center justify-between mt-6">
+                                    <div>
+                                        <span class="text-gray-400 text-xs block mb-1">A partir de</span>
+                                        <span class="text-2xl font-bold text-brand-blue">R$ 56</span>
+                                    </div>
+                                    <div
+                                        class="bg-brand-blue text-white px-6 py-2 rounded-full font-bold group-hover:bg-slate-800 transition">
+                                        Ver
+                                        Detalhes</div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Imagem 4: Marco das 3 Fronteiras -->
+                        <a href="https://wa.me/5545998031634?text=Olá! Quero saber mais sobre o passeio no Marco das Três Fronteiras."
+                            target="_blank"
+                            class="block w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-21.33px)] flex-shrink-0 bg-white rounded-3xl shadow-xl overflow-hidden group hover:scale-[1.02] transition duration-300">
+                            <div class="relative h-64 overflow-hidden">
+                                <img src="../assets/img/marco-tres_fronteiras.jpg" alt="Marco"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-2xl font-bold text-brand-blue mb-2">Marco das 3 Fronteiras</h3>
+                                <p class="text-gray-600 text-sm mb-4">O ponto onde Brasil, Argentina e Paraguai se
+                                    encontram. Shows culturais e um pôr do sol mágico.</p>
+                                <div class="flex items-center justify-between mt-6">
+                                    <div>
+                                        <span class="text-gray-400 text-xs block mb-1">A partir de</span>
+                                        <span class="text-2xl font-bold text-brand-blue">R$ 48</span>
+                                    </div>
+                                    <div
+                                        class="bg-brand-blue text-white px-6 py-2 rounded-full font-bold group-hover:bg-slate-800 transition">
+                                        Ver
+                                        Detalhes</div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Imagem 5: Macuco Safari -->
+                        <a href="https://wa.me/5545998031634?text=Olá! Quero saber mais sobre a aventura no Macuco Safari."
+                            target="_blank"
+                            class="block w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-21.33px)] flex-shrink-0 bg-white rounded-3xl shadow-xl overflow-hidden group hover:scale-[1.02] transition duration-300">
+                            <div class="relative h-64 overflow-hidden">
+                                <img src="../assets/img/macuco_safari.jpg" alt="Macuco"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                                <div
+                                    class="absolute top-4 left-4 bg-brand-orange text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg">
+                                    Aventura</div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-2xl font-bold text-brand-blue mb-2">Macuco Safari</h3>
+                                <p class="text-gray-600 text-sm mb-4">Prepare-se para o banho de alegria! Um passeio de
+                                    barco emocionante sob as quedas das Cataratas.</p>
+                                <div class="flex items-center justify-between mt-6">
+                                    <div>
+                                        <span class="text-gray-400 text-xs block mb-1">A partir de</span>
+                                        <span class="text-2xl font-bold text-brand-blue">R$ 386</span>
+                                    </div>
+                                    <div
+                                        class="bg-brand-blue text-white px-6 py-2 rounded-full font-bold group-hover:bg-slate-800 transition">
+                                        Ver
+                                        Detalhes</div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Imagem 6: Templo Budista -->
+                        <a href="https://wa.me/5545998031634?text=Olá! Quero saber mais sobre o pacote para o Templo Budista."
+                            target="_blank"
+                            class="block w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-21.33px)] flex-shrink-0 bg-white rounded-3xl shadow-xl overflow-hidden group hover:scale-[1.02] transition duration-300">
+                            <div class="relative h-64 overflow-hidden">
+                                <img src="../assets/img/templo-budista.jpg" alt="Templo Budista"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-2xl font-bold text-brand-blue mb-2">Templo Budista</h3>
+                                <p class="text-gray-600 text-sm mb-4">Um local de paz e meditação com centenas de
+                                    estátuas e uma arquitetura oriental deslumbrante.</p>
+                                <div class="flex items-center justify-between mt-6">
+                                    <div>
+                                        <span class="text-gray-400 text-xs block mb-1">A partir de</span>
+                                        <span class="text-2xl font-bold text-brand-blue">Gratuito</span>
+                                    </div>
+                                    <div
+                                        class="bg-brand-blue text-white px-6 py-2 rounded-full font-bold group-hover:bg-slate-800 transition">
+                                        Ver
+                                        Detalhes</div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Imagem 7: Mesquita -->
+                        <a href="https://wa.me/5545998031634?text=Olá! Quero saber mais sobre a visita na Mesquita árabe."
+                            target="_blank"
+                            class="block w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-21.33px)] flex-shrink-0 bg-white rounded-3xl shadow-xl overflow-hidden group hover:scale-[1.02] transition duration-300">
+                            <div class="relative h-64 overflow-hidden">
+                                <img src="../assets/img/mesquita_arabe.jpg" alt="Mesquita"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-2xl font-bold text-brand-blue mb-2">Mesquita Árabe</h3>
+                                <p class="text-gray-600 text-sm mb-4">Descubra a riqueza cultural da comunidade árabe em
+                                    Foz em uma visita guiada pela Mesquita Omar Ibn Al-Khattab.</p>
+                                <div class="flex items-center justify-between mt-6">
+                                    <div>
+                                        <span class="text-gray-400 text-xs block mb-1">A partir de</span>
+                                        <span class="text-2xl font-bold text-brand-blue">Gratuito</span>
+                                    </div>
+                                    <div
+                                        class="bg-brand-blue text-white px-6 py-2 rounded-full font-bold group-hover:bg-slate-800 transition">
+                                        Ver
+                                        Detalhes</div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Imagem 8: Dreamland -->
+                        <a href="https://wa.me/5545998031634?text=Olá! Quero saber mais sobre o Dreamland Museu de Cera."
+                            target="_blank"
+                            class="block w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-21.33px)] flex-shrink-0 bg-white rounded-3xl shadow-xl overflow-hidden group hover:scale-[1.02] transition duration-300">
+                            <div class="relative h-64 overflow-hidden">
+                                <img src="../assets/img/dreamland.jpg" alt="Dreamland"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-2xl font-bold text-brand-blue mb-2">Dreamland</h3>
+                                <p class="text-gray-600 text-sm mb-4">Fotos incríveis com seus ídolos favoritos no maior
+                                    Museu de Cera da América Latina.</p>
+                                <div class="flex items-center justify-between mt-6">
+                                    <div>
+                                        <span class="text-gray-400 text-xs block mb-1">A partir de</span>
+                                        <span class="text-2xl font-bold text-brand-blue">R$ 94</span>
+                                    </div>
+                                    <div
+                                        class="bg-brand-blue text-white px-6 py-2 rounded-full font-bold group-hover:bg-slate-800 transition">
+                                        Ver
+                                        Detalhes</div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Imagem 9: Blue Park -->
+                        <a href="https://wa.me/5545998031634?text=Olá! Quero saber mais sobre o Blue Park Foz."
+                            target="_blank"
+                            class="block w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-21.33px)] flex-shrink-0 bg-white rounded-3xl shadow-xl overflow-hidden group hover:scale-[1.02] transition duration-300">
+                            <div class="relative h-64 overflow-hidden">
+                                <img src="../assets/img/blue_park.jpg" alt="Blue Park"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-2xl font-bold text-brand-blue mb-2">Blue Park</h3>
+                                <p class="text-gray-600 text-sm mb-4">Aproveite a terceira maior praia termal do mundo
+                                    com águas quentes o ano todo e muita diversão.</p>
+                                <div class="flex items-center justify-between mt-6">
+                                    <div>
+                                        <span class="text-gray-400 text-xs block mb-1">A partir de</span>
+                                        <span class="text-2xl font-bold text-brand-blue">R$ 140</span>
+                                    </div>
+                                    <div
+                                        class="bg-brand-blue text-white px-6 py-2 rounded-full font-bold group-hover:bg-slate-800 transition">
+                                        Ver
+                                        Detalhes</div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Imagem 10: Roda Gigante -->
+                        <a href="https://wa.me/5545998031634?text=Olá! Quero saber mais sobre a Roda Gigante Yup Star."
+                            target="_blank"
+                            class="block w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-21.33px)] flex-shrink-0 bg-white rounded-3xl shadow-xl overflow-hidden group hover:scale-[1.02] transition duration-300">
+                            <div class="relative h-64 overflow-hidden">
+                                <img src="../assets/img/yup_star.jpg" alt="Roda Gigante"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-2xl font-bold text-brand-blue mb-2">Yup Star</h3>
+                                <p class="text-gray-600 text-sm mb-4">Uma vista panorâmica inigualável de Foz a a 88
+                                    metros de altura na maior roda gigante da fronteira.</p>
+                                <div class="flex items-center justify-between mt-6">
+                                    <div>
+                                        <span class="text-gray-400 text-xs block mb-1">A partir de</span>
+                                        <span class="text-2xl font-bold text-brand-blue">R$ 59</span>
+                                    </div>
+                                    <div
+                                        class="bg-brand-blue text-white px-6 py-2 rounded-full font-bold group-hover:bg-slate-800 transition">
+                                        Ver
+                                        Detalhes</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grade de Destinos -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1: Islândia -->
+                <a href="https://wa.me/5545998031634?text=Olá! Gostaria de saber mais sobre o pacote Aurora Boreal na Islândia."
+                    target="_blank"
+                    class="block bg-white rounded-3xl shadow-xl overflow-hidden group hover:scale-[1.02] transition duration-300">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1589330273594-fade1ee91647?auto=format&fit=crop&q=80&w=1000"
+                            alt="Islândia"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div
+                            class="absolute top-4 left-4 bg-brand-orange text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg">
+                            Destaque
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-brand-blue mb-2">Aurora Boreal na Islândia</h3>
+                        <p class="text-gray-600 text-sm mb-4">Uma jornada mágica pela terra do gelo e do fogo. Contemple
+                            as luzes do norte em hotéis de luxo.</p>
+                        <div class="flex items-center justify-between mt-6">
+                            <div>
+                                <span class="text-gray-400 text-xs block mb-1">A partir de</span>
+                                <span class="text-2xl font-bold text-brand-blue">R$ 12.900</span>
+                            </div>
+                            <div
+                                class="bg-brand-blue text-white px-6 py-2 rounded-full font-bold group-hover:bg-slate-800 transition">
+                                Ver
+                                Detalhes</div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 2: Grécia -->
+                <a href="https://wa.me/5545998031634?text=Olá! Gostaria de saber mais sobre o pacote Ilhas Gregas."
+                    target="_blank"
+                    class="block bg-white rounded-3xl shadow-xl overflow-hidden group hover:scale-[1.02] transition duration-300">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="../assets/img/sontorini.jpg" alt="Grécia"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-brand-blue mb-2">Ilhas Gregas: Santorini</h3>
+                        <p class="text-gray-600 text-sm mb-4">Pôr do sol icônico, casas brancas e mar azul profundo. O
+                            destino romântico definitivo.</p>
+                        <div class="flex items-center justify-between mt-6">
+                            <div>
+                                <span class="text-gray-400 text-xs block mb-1">A partir de</span>
+                                <span class="text-2xl font-bold text-brand-blue">R$ 8.500</span>
+                            </div>
+                            <div
+                                class="bg-brand-blue text-white px-6 py-2 rounded-full font-bold group-hover:bg-slate-800 transition">
+                                Ver
+                                Detalhes</div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 3: Paris -->
+                <a href="https://wa.me/5545998031634?text=Olá! Gostaria de saber mais sobre o pacote Luxo em Paris."
+                    target="_blank"
+                    class="block bg-white rounded-3xl shadow-xl overflow-hidden group hover:scale-[1.02] transition duration-300">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&q=80&w=1000"
+                            alt="Paris"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-brand-blue mb-2">Luxo em Paris</h3>
+                        <p class="text-gray-600 text-sm mb-4">Experiência gastronômica e cultural na Cidade Luz com
+                            acompanhamento de guias especializados.</p>
+                        <div class="flex items-center justify-between mt-6">
+                            <div>
+                                <span class="text-gray-400 text-xs block mb-1">A partir de</span>
+                                <span class="text-2xl font-bold text-brand-blue">R$ 7.200</span>
+                            </div>
+                            <div
+                                class="bg-brand-blue text-white px-6 py-2 rounded-full font-bold group-hover:bg-slate-800 transition">
+                                Ver
+                                Detalhes</div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Novos Destinos (Fila 2) -->
+                <!-- Card 4: Orlando -->
+                <a href="https://wa.me/5545998031634?text=Olá! Gostaria de saber mais sobre o pacote Orlando Disney."
+                    target="_blank"
+                    class="block bg-white rounded-3xl shadow-xl overflow-hidden group hover:scale-[1.02] transition duration-300">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="../assets/img/orlando_florida.jpg" alt="Disney"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-brand-blue mb-2">Magia em Orlando</h3>
+                        <p class="text-gray-600 text-sm mb-4">Os melhores parques do mundo com roteiros exclusivos para
+                            toda a família e hospedagem premium.</p>
+                        <div class="flex items-center justify-between mt-6">
+                            <div><span class="text-gray-400 text-xs block mb-1">A partir de</span><span
+                                    class="text-2xl font-bold text-brand-blue">R$ 9.800</span></div>
+                            <div
+                                class="bg-brand-blue text-white px-6 py-2 rounded-full font-bold group-hover:bg-slate-800 transition">
+                                Ver
+                                Detalhes</div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 5: Egito -->
+                <a href="https://wa.me/5545998031634?text=Olá! Gostaria de saber mais sobre o pacote Egito Histórico."
+                    target="_blank"
+                    class="block bg-white rounded-3xl shadow-xl overflow-hidden group hover:scale-[1.02] transition duration-300">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&q=80&w=1000"
+                            alt="Egito"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-brand-blue mb-2">Mistérios do Egito</h3>
+                        <p class="text-gray-600 text-sm mb-4">Pirâmides, cruzeiro pelo Nilo e a história fascinante dos
+                            faraós em uma guia arqueológica completa.</p>
+                        <div class="flex items-center justify-between mt-6">
+                            <div><span class="text-gray-400 text-xs block mb-1">A partir de</span><span
+                                    class="text-2xl font-bold text-brand-blue">R$ 11.200</span></div>
+                            <div
+                                class="bg-brand-blue text-white px-6 py-2 rounded-full font-bold group-hover:bg-slate-800 transition">
+                                Ver
+                                Detalhes</div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 6: Japão -->
+                <a href="https://wa.me/5545998031634?text=Olá! Gostaria de saber mais sobre o pacote Japão Milenar."
+                    target="_blank"
+                    class="block bg-white rounded-3xl shadow-xl overflow-hidden group hover:scale-[1.02] transition duration-300">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&q=80&w=1000"
+                            alt="Japão"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-brand-blue mb-2">Tradição em Kyoto</h3>
+                        <p class="text-gray-600 text-sm mb-4">Visite templos milenares, jardins zen e viva a experiência
+                            única da cultura japonesa moderna.</p>
+                        <div class="flex items-center justify-between mt-6">
+                            <div><span class="text-gray-400 text-xs block mb-1">A partir de</span><span
+                                    class="text-2xl font-bold text-brand-blue">R$ 14.500</span></div>
+                            <div
+                                class="bg-brand-blue text-white px-6 py-2 rounded-full font-bold group-hover:bg-slate-800 transition">
+                                Ver
+                                Detalhes</div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Mais Destinos (Fila 3) -->
+                <!-- Card 7: Maceió -->
+                <a href="https://wa.me/5545998031634?text=Olá! Gostaria de saber mais sobre o pacote Maceió Premium."
+                    target="_blank"
+                    class="block bg-white rounded-3xl shadow-xl overflow-hidden group hover:scale-[1.02] transition duration-300">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1582967788606-a171c1080cb0?auto=format&fit=crop&q=80&w=1000"
+                            alt="Maceió"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-brand-blue mb-2">Paraíso Alagoano</h3>
+                        <p class="text-gray-600 text-sm mb-4">Piscinas naturais, águas cristalinas e a melhor
+                            gastronomia do Nordeste brasileiro em resorts luxuosos.</p>
+                        <div class="flex items-center justify-between mt-6">
+                            <div><span class="text-gray-400 text-xs block mb-1">A partir de</span><span
+                                    class="text-2xl font-bold text-brand-blue">R$ 3.800</span></div>
+                            <div
+                                class="bg-brand-blue text-white px-6 py-2 rounded-full font-bold group-hover:bg-slate-800 transition">
+                                Ver
+                                Detalhes</div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 8: Alpes Suíços -->
+                <a href="https://wa.me/5545998031634?text=Olá! Gostaria de saber mais sobre o pacote Alpes Suíços."
+                    target="_blank"
+                    class="block bg-white rounded-3xl shadow-xl overflow-hidden group hover:scale-[1.02] transition duration-300">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&q=80&w=1000"
+                            alt="Suíça"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-brand-blue mb-2">Alpes Suíços</h3>
+                        <p class="text-gray-600 text-sm mb-4">Vilarejos charmosos, queijos, chocolates e as montanhas
+                            mais deslumbrantes da Europa Central.</p>
+                        <div class="flex items-center justify-between mt-6">
+                            <div><span class="text-gray-400 text-xs block mb-1">A partir de</span><span
+                                    class="text-2xl font-bold text-brand-blue">R$ 13.400</span></div>
+                            <div
+                                class="bg-brand-blue text-white px-6 py-2 rounded-full font-bold group-hover:bg-slate-800 transition">
+                                Ver
+                                Detalhes</div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 9: Atacama -->
+                <a href="https://wa.me/5545998031634?text=Olá! Gostaria de saber mais sobre o pacote Atacama Trekking."
+                    target="_blank"
+                    class="block bg-white rounded-3xl shadow-xl overflow-hidden group hover:scale-[1.02] transition duration-300">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="../assets/img/atacama.jpg" alt="Atacama"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-brand-blue mb-2">Deserto do Atacama</h3>
+                        <p class="text-gray-600 text-sm mb-4">O deserto mais árido do mundo com paisagens surreais,
+                            gêiseres e o céu mais estrelado do planeta.</p>
+                        <div class="flex items-center justify-between mt-6">
+                            <div><span class="text-gray-400 text-xs block mb-1">A partir de</span><span
+                                    class="text-2xl font-bold text-brand-blue">R$ 5.900</span></div>
+                            <div
+                                class="bg-brand-blue text-white px-6 py-2 rounded-full font-bold group-hover:bg-slate-800 transition">
+                                Ver
+                                Detalhes</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-blue text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 border-b border-gray-700 pb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <a href="../index.html" class="flex items-center gap-2 mb-6">
+                        <i class="fa-solid fa-sun text-brand-orange text-3xl"></i>
+                        <span class="font-bold text-2xl tracking-tight">AMANHECER <span
+                                class="text-brand-orange">TURISMO</span></span>
+                    </a>
+                    <p class="text-gray-400 max-w-sm">Levando você para ver o mundo de uma forma diferente. Criamos
+                        memórias inesquecíveis desde 2024.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6 text-brand-orange">Menu</h4>
+                    <ul class="space-y-4 text-gray-400">
+                        <li><a href="../index.html" class="hover:text-white transition">Início</a></li>
+                        <li><a href="destinos.html"
+                                class="hover:text-white transition font-bold text-white">Destinos</a></li>
+                        <li><a href="sobre.html" class="hover:text-white transition">Sobre Nós</a></li>
+                        <li><a href="contato.html" class="hover:text-white transition">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6 text-brand-orange">Redes Sociais</h4>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-brand-orange transition"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-brand-orange transition"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://wa.me/5545998031634" target="_blank"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-brand-orange transition"><i
+                                class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center text-sm text-gray-500">
+                <p>&copy; 2024 Amanhecer Turismo. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+# This workflow automatically deploys the static site to GitHub Pages
+# It runs on every push to the main branch.
+# It uses the peaceiris/actions-gh-pages action to push the content of the repository
+# (the root folder) to the `gh-pages` branch, which GitHub Pages serves.
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main   # adjust if you use a different branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          # Fetch the entire history to allow the gh-pages branch to be updated correctly
+          fetch-depth: 0
+
+      # If you have a build step (e.g., npm run build), add it here.
+      # For a pure HTML/CSS/JS site there is no build step needed.
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
+          # Force push to overwrite the gh-pages branch
+          force_orphan: true
+          # Optional: keep a clean history on gh-pages
+          keep_files: false

@@ -310,7 +310,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Configuração do Supabase (Substitua pelos seus dados reais)
 const SUPABASE_URL = 'https://jvgxcdhldngzpxbnqelt.supabase.co';
-const SUPABASE_ANON_KEY = 'sb_publishable_slfVosEqkcS0OPKN5zKcsQ_HjWUr83Xj16D3T';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp2Z3hjZGhsZG5nenB4Ym5xZWx0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjY1MTg2NDUsImV4cCI6MjA4MjA5NDY0NX0.ZPHCh6xCpXm5z_kHuKmyHprd0TtpRUjfCadnDJSeYFA';
 
 let supabaseClient = null;
 
@@ -418,6 +418,10 @@ window.submitBooking = async () => {
         alert('Ocorreu um erro ao processar sua solicitação. Por favor, tente novamente.');
         btnConfirm.disabled = false;
         btnConfirm.innerText = 'Confirmar Agendamento';
+        // Fecha o modal mesmo em caso de erro para evitar bloqueio da UI
+        setTimeout(() => {
+            closeConsultancyModal();
+        }, 3000);
     }
 };
 
@@ -442,3 +446,31 @@ function showSuccess() {
         }, 3000);
     }
 }
+// Share button functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const shareBtn = document.getElementById('share-button');
+    if (!shareBtn) return;
+    shareBtn.addEventListener('click', async (e) => {
+        e.preventDefault();
+        const shareData = {
+            title: document.title,
+            url: window.location.href
+        };
+        if (navigator.share) {
+            try {
+                await navigator.share(shareData);
+            } catch (err) {
+                console.error('Web Share failed:', err);
+            }
+        } else {
+            // Fallback: copy URL to clipboard and alert user
+            try {
+                await navigator.clipboard.writeText(shareData.url);
+                alert('Link copiado para a área de transferência!');
+            } catch (err) {
+                console.error('Copy to clipboard failed:', err);
+                alert('Não foi possível copiar o link. Por favor, copie manualmente: ' + shareData.url);
+            }
+        }
+    });
+});
